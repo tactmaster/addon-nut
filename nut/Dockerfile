@@ -21,12 +21,9 @@ RUN \
         neon-dev=0.31.1-r0 \
         net-snmp-dev=5.8-r3 \
     \
-    && curl -J -L -o /tmp/nut.tar.gz \
-        http://www.networkupstools.org/source/2.7/nut-2.7.4.tar.gz \
-    && mkdir -p /tmp/nut \
-    && tar zxf /tmp/nut.tar.gz -C \
-        /tmp/nut --strip-components=1 \
+    && git clone https://github.com/vincentto13/nut.git /tmp/nut \
     && cd /tmp/nut \
+    && ./autogen.sh \
     && ./configure \
             --prefix=/usr \
             --libexecdir=/usr/lib/nut \
@@ -66,16 +63,16 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Network UPS Tools" \
+    io.hass.name="Network UPS Tools from git test" \
     io.hass.description="Manage battery backup (UPS) devices" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Dale Higgs <dale3h@addons.community>" \
+    maintainer="Ed Watson <edmundwatson@gmail.com>" \
     org.opencontainers.image.title="Network UPS Tools" \
     org.opencontainers.image.description="Manage battery backup (UPS) devices" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Dale Higgs <dale3h@addons.community>" \
+    org.opencontainers.image.authors="Dale Higgs <dale3h@addons.community>,Ed Watson <edmundwatson@gmail.com>" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://addons.community" \
     org.opencontainers.image.source="https://github.com/hassio-addons/addon-nut" \
