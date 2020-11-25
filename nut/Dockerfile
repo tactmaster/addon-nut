@@ -6,6 +6,7 @@ FROM ${BUILD_FROM}
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
+        musl=1.1.24-r10 \
         hwids=20200306-r0 \
         libtool=2.4.6-r7 \
         libusb-compat=0.1.5-r4 \
