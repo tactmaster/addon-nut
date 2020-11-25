@@ -27,12 +27,15 @@ RUN git clone https://github.com/networkupstools/nut.git /tmp/nut \
     && cd /tmp/nut \
     && ./autogen.sh  \
     && ./configure \
+             --enable-maintainer-mode \
+            --disable-silent-rules  \
+            --with-dev --enable-static \
+            --with-drvpath=/lib/nut \
             --prefix=/usr \
             --libexecdir=/usr/lib/nut \
             --without-wrap \
             --with-user=root \
             --with-group=root \
-            --disable-static \
             --with-serial \
             --with-usb \
             --without-avahi \
@@ -48,7 +51,7 @@ RUN git clone https://github.com/networkupstools/nut.git /tmp/nut \
             --sysconfdir=/etc/nut \
             --with-statepath=/var/run/nut \
             --with-altpidpath=/var/run/nut \
-            --with-udev-dir=/etc/udev/rules.d \
+            --with-udev-dir=/lib/udev \
     && make install \
     && apk del --no-cache --purge .build-dependencies \
     && rm -f -r \
