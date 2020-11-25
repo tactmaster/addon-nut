@@ -13,6 +13,7 @@ RUN \
         net-snmp-libs=5.8-r3 \
         openssl=1.1.1g-r0 \
         usbutils=012-r1 \
+        git \
     && apk add --no-cache --virtual .build-dependencies \
         autoconf=2.69-r2 \
         automake=1.16.2-r0 \
