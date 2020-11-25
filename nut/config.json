@@ -18,7 +18,7 @@
     "3493/tcp": "Network UPS Tools"
   },
   "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
-  "udev" : true
+  "udev" : true,
   "options": {
     "users": [
       {
