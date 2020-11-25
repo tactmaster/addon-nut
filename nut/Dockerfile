@@ -15,15 +15,15 @@ RUN \
         openssl=1.1.1g-r0 \
         git \
         usbutils=012-r1 \
+        python2 \
     && apk add --no-cache --virtual .build-dependencies \
         autoconf=2.69-r2 \
         automake=1.16.2-r0 \
         build-base=0.5-r2 \
         libusb-compat-dev=0.1.5-r4 \
         neon-dev=0.31.1-r0 \
-        net-snmp-dev=5.8-r3 \
-        
-RUN git clonehttps://github.com/networkupstools/nut.git /tmp/nut \
+        net-snmp-dev=5.8-r3 
+RUN git clone https://github.com/networkupstools/nut.git /tmp/nut \
     && cd /tmp/nut \
     && ./autogen.sh  \
     && ./configure \
