@@ -48,6 +48,7 @@ RUN git clone https://github.com/networkupstools/nut.git /tmp/nut \
             --sysconfdir=/etc/nut \
             --with-statepath=/var/run/nut \
             --with-altpidpath=/var/run/nut \
+            --with-udev-dir=/etc/udev/rules.d \
     && make install \
     && apk del --no-cache --purge .build-dependencies \
     && rm -f -r \
