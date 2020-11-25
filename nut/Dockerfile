@@ -23,7 +23,7 @@ RUN \
         neon-dev=0.31.1-r0 \
         net-snmp-dev=5.8-r3 \
         
-RUN git clonehttps://github.com/networkupstools/nut.git /tmp/nut &&
+RUN git clonehttps://github.com/networkupstools/nut.git /tmp/nut \
     && cd /tmp/nut \
     && ./autogen.sh 
     && ./configure \
