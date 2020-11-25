@@ -25,7 +25,7 @@ RUN \
         
 RUN git clonehttps://github.com/networkupstools/nut.git /tmp/nut &&
     && cd /tmp/nut \
-    g&& ./autogen.sh 
+    && ./autogen.sh 
     && ./configure \
             --prefix=/usr \
             --libexecdir=/usr/lib/nut \
