@@ -110,7 +110,7 @@ if bashio::config.equals 'mode' 'netserver' ;then
 
     bashio::log.info "Starting the UPS drivers..."
     # Run upsdrvctl
-    nut-scanner
+    nut-scanner --usb_scan
     if bashio::debug; then
         upsdrvctl -u root -D start
     else
